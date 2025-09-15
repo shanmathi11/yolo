@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create Account - AI Virtual Personal Trainer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #f2f2f2;
+    }
+    .container {
+      background: rgba(26, 26, 26, 0.95);
+      padding: 40px 48px;
+      border-radius: 24px;
+      width: 380px;
+      box-shadow: 0 8px 32px 0 rgba(250, 70, 20, 0.6);
+      text-align: center;
+    }
+    h1 {
+      font-weight: 900;
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      color: #ff3d00;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 10px #ff3d0099;
+    }
+    p.subtitle {
+      margin-bottom: 30px;
+      font-weight: 700;
+      color: #fcaf17;
+      letter-spacing: 1.4px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 14px 18px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 1px solid #fcaf17;
+      background: #222;
+      color: #f2f2f2;
+      font-size: 1em;
+      outline: none;
+      transition: border-color 0.3s ease-in-out;
+    }
+    input:focus {
+      border-color: #ff3d00;
+      box-shadow: 0 0 8px #ff3d0055;
+    }
+    button {
+      margin-top: 24px;
+      width: 100%;
+      padding: 15px;
+      border-radius: 40px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      font-size: 1.2em;
+      border: none;
+      background: linear-gradient(90deg, #4adede, #ff3d00 80%);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 4px 15px #ff3d0077;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #ff3d00, #4adede 80%);
+    }
+    .already {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #fcaf17;
+    }
+    .already a {
+      color: #ff3d00;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .already a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Create Account</h1>
+    <p class="subtitle">Join AI Virtual Personal Trainer</p>
+    <form id="createAccountForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="already">
+      Already have an account? <a href="#">Log In</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('createAccountForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const pwd = document.getElementById('password').value;
+      const confirmPwd = document.getElementById('confirmPassword').value;
+      if (pwd !== confirmPwd) {
+        alert("Passwords do not match!");
+        return;
+      }
+      alert("Account Created Successfully!");
+      // Redirect to your user details page
+      window.location.href = "file:///C:/Users/shanm/OneDrive/Documents/agee.html";
+    });
+  </script>
+</body>
+</html>

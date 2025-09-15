@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Virtual Personal Trainer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+      color: #f2f2f2;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 10px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #ff3d00 0%, #fcaf17 60%, #4adede 100%);
+      border-radius: 24px;
+      box-shadow: 0 8px 40px #a23eff44;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 48px 48px 48px 32px;
+      margin-bottom: 32px;
+    }
+    .hero-text {
+      flex: 1;
+      color: #fff;
+    }
+    .hero-text h1 {
+      font-size: 3em;
+      font-weight: 900;
+      margin: 0 0 16px 0;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 12px #000;
+    }
+    .hero-text p {
+      font-size: 1.25em;
+      margin-bottom: 22px;
+      font-weight: 700;
+      text-shadow: 1px 1px 8px #2c5364;
+    }
+    .hero-btn {
+      background: linear-gradient(90deg, #4adede, #ff3d00 80%);
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 40px;
+      font-size: 1.2em;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 4px 12px #444;
+      letter-spacing: 2px;
+    }
+    .hero-img {
+      width: 220px;
+      height: 320px;
+      border-radius: 24px;
+      background: url('https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&w=400') no-repeat center center;
+      background-size: cover;
+      box-shadow: 0 6px 40px #ff3d0066;
+      margin-left: 40px;
+    }
+    .card-grid {
+      display: grid;
+      gap: 36px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-bottom: 48px;
+    }
+    .card {
+      background: rgba(34,34,34,0.92);
+      border-radius: 18px;
+      box-shadow: 0 4px 18px #4adede44;
+      padding: 26px 22px;
+      text-align: left;
+      transition: transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:before {
+      content: "";
+      position: absolute;
+      left: -60px;
+      top: -60px;
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg,#fcaf17cc,#ff3d00aa,#4adede99);
+      border-radius: 50%;
+      opacity: 0.35;
+      z-index: 0;
+      filter: blur(6px);
+    }
+    .card h2 {
+      color: #fcaf17;
+      font-size: 1.3em;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      position: relative;
+      z-index: 1;
+      letter-spacing: 1px;
+    }
+    .card p {
+      font-size: 1.08em;
+      color: #f4f4f4;
+      margin-bottom: 0;
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+    }
+    .progress-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0f2027 60%, #4adede 100%);
+      border-radius: 18px;
+      color: #fff;
+      padding: 28px 10px 22px 10px;
+      box-shadow: 0 4px 18px #a23eff99;
+      margin-bottom: 30px;
+    }
+    .progress-circle {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: conic-gradient(#fcaf17 0% 70%, #4adede 70% 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      box-shadow: 0 0 12px #fcaf1766;
+      position: relative;
+    }
+    .progress-circle span {
+      font-size: 2.2em;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 1px 1px 10px #a23eff77;
+      position: absolute;
+    }
+    @media (max-width: 760px) {
+      .hero { flex-direction: column; text-align: center; }
+      .hero-img { width: 100%; margin-left: 0; margin-top: 24px; }
+      .container { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-text">
+        <h1>FIT <span style="color:#4adede;">NESS</span></h1>
+        <p>Find Your Strength.<br>AI Virtual Personal Trainer for Everyone.</p>
+        <button class="hero-btn">Start Now</button>
+      </div>
+      <div class="hero-img"></div>
+    </div>
+    <!-- Progress Card Example -->
+    <div class="progress-card">
+      <div class="progress-circle"><span>75%</span></div>
+      <div style="color:#4adede;font-weight:700;">Body Composition</div>
+      <small>Jane Doe | Activity Record</small>
+      <div>Successfully completed 3 days | Training</div>
+    </div>
+    <!-- Card Grid for Key Sections -->
+    <div class="card-grid">
+      <div class="card">
+        <h2>Your Progress</h2>
+        <p>Basing Training: 2 sessions<br>Weight Training: 1 session<br><br><b>Last Exercise:</b> Straight Squat<br><b>Status:</b> Done</p>
+      </div>
+      <div class="card">
+        <h2>Workout Plan</h2>
+        <p>Squats, Push-Ups, Plank<br>Today's goal: 3 sets, 10 reps each<br><br><b>Rest Timer:</b> 30s after each set</p>
+      </div>
+      <div class="card">
+        <h2>Nutrition Guidance</h2>
+        <p>High protein meals, hydrate well, reduce sugars<br><b>Recommendation:</b> 1500 kcal, 100g protein</p>
+      </div>
+      <div class="card">
+        <h2>Motivational Feedback</h2>
+        <p>"Awesome, keep going!"<br>"Halfway done 💪"<br>"Workout complete 🎉"</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
