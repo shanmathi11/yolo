@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Virtual Personal Trainer - MVP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #171a2b 0%, #64f1e2 100%) fixed;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #f5f6fa;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 10px;
+    }
+    .flex-row {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: center;
+    }
+    .card {
+      background: rgba(28, 28, 35, .95);
+      border-radius: 18px;
+      box-shadow: 0 8px 40px #48dae046;
+      padding: 32px 22px;
+      min-width: 265px;
+      flex: 1 1 265px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .card h2 {
+      font-size: 1.3em;
+      color: #64f1e2;
+      font-weight: 900;
+      margin-bottom: 10px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+    .card p, .card ul {
+      color: #eaeaea;
+      font-weight: 500;
+      font-size: 1em;
+      margin: 0 0 7px 0;
+      line-height: 1.7;
+    }
+    .title-hero {
+      background: linear-gradient(90deg, #64f1e2 10%, #3a8fff 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.6em;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-align: left;
+      display: block;
+    }
+    .subtitle {
+      color: #fff;
+      font-size: 1.2em;
+      font-weight: 700;
+      margin-bottom: 38px;
+      letter-spacing: 0.8px;
+      text-shadow: 0 2px 8px #5bd1e111;
+    }
+    .icon {
+      font-size: 2.2em;
+      margin-right: 14px;
+      vertical-align: middle;
+      color: #3a8fff;
+      text-shadow: 0 0 7px #64f1e244;
+    }
+    .feedback {
+      color: #fcaf17;
+      font-weight: 700;
+      font-size: 1.06em;
+      background: #232842;
+      border-radius: 7px;
+      margin: 6px 0;
+      padding: 7px 11px;
+    }
+    .progress {
+      height: 6px;
+      border-radius: 12px;
+      background: linear-gradient(90deg,#64f1e2 55%,#3a8fff 100%);
+      margin-top: 8px;
+      width: 70%;
+    }
+    .wearable-data {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .wearable-data input {
+      padding: 7px 13px;
+      border-radius: 6px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-size: 1em;
+    }
+    .chart-bar {
+      height: 24px;
+      background: linear-gradient(90deg,#3a8fff 15%, #fcaf17 85%), #fcaf17;
+      border-radius: 100px;
+      width: 90%;
+      margin: 14px 0 10px 0;
+      position: relative;
+    }
+    @media (max-width:790px) {
+      .container { padding: 0 2vw;}
+      .flex-row { flex-direction: column;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Section -->
+    <span class="title-hero">FITNESS</span>
+    <div class="subtitle">Find Your Strength – AI Virtual Personal Trainer</div>
+
+    <div class="flex-row">
+      <!-- User Profile & Goal Setup -->
+      <div class="card">
+        <h2><span class="icon">&#128100;</span>User Profile & Goal Setup</h2>
+        <p>Signup / Guest Login<br>
+        <b>Enter:</b> Age, Weight, Fitness Goal</p>
+        <ul>
+          <li>Goals: Lose Weight / Build Muscle / Endurance</li>
+        </ul>
+      </div>
+
+      <!-- Personalized Workout Plans -->
+      <div class="card">
+        <h2><span class="icon">&#127947;</span>Workout Plans</h2>
+        <p>Choose from 3–5 preset workout routines based on your goals.</p>
+        <p>Plans dynamically adapt to activity inputs (manual or simulated).</p>
+        <div class="chart-bar"></div>
+        <span style="font-size: .9em; color:#64f1e2;">Today's Plan: Squats, Push Ups, Plank</span>
+      </div>
+    </div>
+
+    <div class="flex-row">
+      <!-- Real-Time Feedback via Phone Camera -->
+      <div class="card">
+        <h2><span class="icon">&#128247;</span>Real-Time Feedback</h2>
+        <p>Use phone camera for pose estimation and rep counting.</p>
+        <div class="feedback">Rep counted! Good form!</div>
+        <div class="feedback">Keep your back straight!</div>
+      </div>
+
+      <!-- Text-to-Speech Audio Feedback -->
+      <div class="card">
+        <h2><span class="icon">&#128266;</span>Voice Motivation</h2>
+        <p>Text-to-Speech delivers feedback aloud:<br>"Great job! Rest for 30s."</p>
+        <div class="feedback">"Push harder! You're halfway there!"</div>
+      </div>
+    </div>
+
+    <div class="flex-row">
+      <!-- Personalized Nutrition Guidance -->
+      <div class="card">
+        <h2><span class="icon">&#127828;</span>Nutrition Guidance</h2>
+        <p>Personalized meal tips for your goals & activities:</p>
+        <ul>
+          <li>High protein breakfast</li>
+          <li>Hydration reminders</li>
+          <li>Post-workout snacks: eggs, fruit</li>
+        </ul>
+      </div>
+
+      <!-- Progress Tracking -->
+      <div class="card">
+        <h2><span class="icon">&#128202;</span>Progress Tracking</h2>
+        <p>Monitor your sessions, reps, and achievements.</p>
+        <div>
+          <span>Workouts Completed: <b>8</b></span>
+          <div class="progress"></div>
+          <span>Reps This Week: <b>150</b></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-row">
+      <!-- Simulated Wearable Data -->
+      <div class="card">
+        <h2><span class="icon">&#128308;</span>Wearable Data Simulation</h2>
+        <p>Manual inputs or mock data adapt your plan:</p>
+        <div class="wearable-data">
+          <label>Steps: <input type="number" value="4300"/></label>
+          <label>Heart Rate: <input type="number" value="85"/></label>
+        </div>
+        <span style="margin-top:9px; color:#fcaf17;">Workout difficulty and nutrition are adjusted!</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
